@@ -934,11 +934,13 @@ void CMFCGLView::DrawScene(void)
 	
 	// distance  : THIS IS FOR THE UNIT DISTANCE OF 1.0 IN THIS PROGRAM
 	glTranslatef(-1.5f, 0.25f, 0.0); //Target point
-	auxSolidSphere(0.1f);         //Draw sphere
+	//auxSolidSphere(0.1f);         //Draw sphere
+	glutSolidSphere(0.1f, 10, 10);
 	glTranslatef(1.5f, -0.25f, 0.0);  //Return origin
 
 	glTranslatef(-1.5f, 1.25f, 0.0); //Target point
-	auxSolidSphere(0.1f);         //Draw sphere
+	glutSolidSphere(0.1f, 10, 10);
+	//auxSolidSphere(0.1f);         //Draw sphere
 	glTranslatef(1.5f, -1.25f, 0.0); //Return origin
 
 	glColor3f(0.75f, 0.0, 0.0);
@@ -1030,7 +1032,8 @@ void CMFCGLView::DrawScene(void)
 				if (Cell[xx][yy][zz].mtype[nn]== 1) //fluid
 				{
 					glColor3f(0.0, 0.75f, 0.0); // Change sphere color to GREEN
-					auxSolidSphere(m_fMrad);
+					//auxSolidSphere(m_fMrad);
+					glutSolidSphere(m_fMrad, 10, 10);
 				}
 
 				if (Cell[xx][yy][zz].mtype[nn] == 4) // thrmal wall
@@ -1039,7 +1042,8 @@ void CMFCGLView::DrawScene(void)
 					{glColor3f(1.00f, 0.65f, 0.0f);}
 					else
 					{glColor3f(0.75f, 0.75f, 0.0f);}
-					auxSolidSphere(m_fMrad);
+					//auxSolidSphere(m_fMrad);
+					glutSolidSphere(m_fMrad, 10, 10);
 				}
 
 
@@ -1056,7 +1060,8 @@ void CMFCGLView::DrawScene(void)
 						else
 						{glColor3f(0.0, 0.0f, 0.75f);}
 
-					auxSolidSphere(m_fMrad);
+					//auxSolidSphere(m_fMrad);
+						glutSolidSphere(m_fMrad, 10, 10);
 						}
 					}
 				}
@@ -1068,7 +1073,8 @@ void CMFCGLView::DrawScene(void)
 						{
 					glColor3f(0.0, 0.2f, 0.0f); // Change sphere color to GREEN
 					//auxWireSphere(m_fMrad/2);
-					auxWireSphere(m_fMrad);
+					//auxWireSphere(m_fMrad);
+					glutWireSphere(m_fMrad, 10, 10);
 					//	auxSolidSphere(m_fMrad-0.02);
 						}
 					}
@@ -1367,7 +1373,8 @@ m_str_heatfluxz.Format("%.2f",m_heatfluxz);
 
 		 	glColor3f(0.75f, 0.0f, 0.0);
 				glTranslatef(11.0f+float(m_Gcount)/50.0f, float(m_Tsc)+4.5f, 0.0f); //Target point
-				auxSolidSphere(0.08f);         //Draw sphere
+				//auxSolidSphere(0.08f);         //Draw sphere
+				glutSolidSphere(0.08f, 10, 10);
 				glTranslatef(-11.0f-float(m_Gcount)/50.0f, -float(m_Tsc)-4.5f, 0.0f);  //Return origin
 				glColor3f(5.75f, 0.0f, 0.0);
 
@@ -1385,7 +1392,8 @@ m_str_heatfluxz.Format("%.2f",m_heatfluxz);
 	//Draw Kin MArker
 	glColor3f(0.0f, 0.0f, 0.75f);
 	glTranslatef(11.0f+float(m_Gcount)/50.0f, float(m_Kinsc)+1.0f, 0.0f); //Target point
-	auxSolidSphere(0.08f);         //Draw sphere
+	//auxSolidSphere(0.08f);         //Draw sphere
+	glutSolidSphere(0.08f, 10, 10);
 	glTranslatef(-11.0f-float(m_Gcount)/50.0f, -float(m_Kinsc)-1.0f, 0.0f);  //Return origin
 	glColor3f(0.0f, 0.0f, 5.75f);
 	 glBegin(GL_LINE_STRIP);
@@ -1397,7 +1405,8 @@ m_str_heatfluxz.Format("%.2f",m_heatfluxz);
 	//Draw Pot MArker
 	glColor3f(0.0f, 0.0f, 0.0f);
 	glTranslatef(11.0f+float(m_Gcount)/50.0f, float(m_rf*m_Potsc)+1.0f, 0.0f); //Target point
-	auxSolidSphere(0.08f);         //Draw sphere
+	//auxSolidSphere(0.08f);         //Draw sphere
+	glutSolidSphere(0.08f, 10, 10);
 	glTranslatef(-11.0f-float(m_Gcount)/50.0f,-float(m_rf*m_Potsc)-1.0f, 0.0f);  //Return origin
 	glColor3f(0.0f, 0.0f, 0.0f);
 	 glBegin(GL_LINE_STRIP);
@@ -1410,7 +1419,8 @@ m_str_heatfluxz.Format("%.2f",m_heatfluxz);
 	//Draw Tot MArker
 	glColor3f(0.0f, 1.0f, 0.0f);
 	glTranslatef(11.0f+float(m_Gcount)/50.0f, float(m_rf*m_Totsc)+1.0f, 0.0f); //Target point
-	auxSolidSphere(0.08f);         //Draw sphere
+	//auxSolidSphere(0.08f);         //Draw sphere
+	glutSolidSphere(0.08f, 10, 10);
 	glTranslatef(-11.0f-float(m_Gcount)/50.0f, -float(m_rf*m_Totsc)-1.0f, 0.0f);  //Return origin
 	glColor3f(0.0f, 1.0, 0.0f);
 	 glBegin(GL_LINE_STRIP);
